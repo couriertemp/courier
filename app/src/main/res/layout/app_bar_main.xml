@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context="uz.courier.view.MainActivity">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="48dp"
+        android:padding="15dp"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/sendPackage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tab_white"
+            android:foreground="@drawable/ripple_tab"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:paddingHorizontal="65dp"
+            android:stateListAnimator="@null"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/cerapro"
+            android:text="Send"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/acceptPackage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_white"
+            android:foreground="@drawable/ripple_button"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:textAllCaps="false"
+            android:paddingHorizontal="65dp"
+            android:stateListAnimator="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/cerapro"
+            android:text="Accept"/>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/packageInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/sendPackage"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/button_white"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="22dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            >
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/fromContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/fromIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="*"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/cera_pro"
+                    android:textColor="#000"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <AutoCompleteTextView
+                    android:id="@+id/packageFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/fromIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="14dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:drawablePadding="14dp"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:lineSpacingExtra="7sp"
+                    android:hint="From"
+                    android:textColorHint="#c1c1c1"
+                    style="@style/cerapro"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/location_disabled"
+                    />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/toContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fromContainer"
+                android:layout_marginTop="5dp"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/packageTo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:drawableLeft="@drawable/location_arrow"
+                    android:drawableRight="@drawable/location_disabled"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:drawablePadding="14dp"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:lineSpacingExtra="7sp"
+                    android:hint="To"
+                    android:textColorHint="#c1c1c1"
+                    style="@style/cerapro"
+                    android:background="@color/white"
+                    />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <Button
+            android:id="@+id/searchCars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textSize="12sp"
+            android:fontFamily="@font/cera_pro"
+            android:lineSpacingExtra="9sp"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="44dp"
+            android:textAllCaps="false"
+            android:background="@drawable/button_primary"
+            android:foreground="@drawable/ripple_button"
+            android:stateListAnimator="@null"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/packageInfo" />
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</FrameLayout>

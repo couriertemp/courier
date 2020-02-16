@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="CreateTransportViewModel"
+            type="uz.courier.viewModel.CreateTransportViewModel" />
+
+        <variable
+            name="imageUrl"
+            type="String" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#f6f6f6"
+        tools:context="uz.courier.view.CreateTransportActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:navigationIcon="@drawable/left_arrow"
+            android:id="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/appBarTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="5sp"
+                    tools:text="@{CreateTransportViewModel.PageTitle}"
+                    android:textFontWeight="700"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:fontFamily="@font/cera_pro_bold"
+                    />
+
+                <ImageView
+                    android:id="@+id/appLogo"
+                    android:layout_width="121dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="15.2dp"
+                    android:src="@drawable/logo_c"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="60dp"
+            >
+
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:padding="15dp"
+                >
+
+                <TextView
+                    android:id="@+id/transportTypeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#30000000"
+                    android:lineSpacingExtra="11sp"
+                    android:text="Type of transport"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:fontFamily="@font/cera_pro"
+                    android:layout_marginTop="25dp"
+                    />
+
+                <Spinner
+                    android:id="@+id/transportType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="7sp"
+                    android:gravity="start"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/transportTypeLabel"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:textSize="14sp"
+                    style="@style/cerapro"
+                    android:padding="5dp"
+                    android:layout_marginTop="6dp"
+                    />
+
+                <TextView
+                    android:id="@+id/transportMarkLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#30000000"
+                    android:lineSpacingExtra="11sp"
+                    android:text="Mark"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/transportType"
+                    android:fontFamily="@font/cera_pro"
+                    android:layout_marginTop="25dp"
+                    />
+
+                <Spinner
+                    android:id="@+id/transportMark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="7sp"
+                    android:gravity="start"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/transportMarkLabel"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:textSize="14sp"
+                    style="@style/cerapro"
+                    android:padding="20dp"
+                    android:layout_marginTop="6dp"
+                    />
+
+                <TextView
+                    android:id="@+id/transportNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#30000000"
+                    android:lineSpacingExtra="11sp"
+                    android:text="Name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/transportMark"
+                    android:fontFamily="@font/cera_pro"
+                    android:layout_marginTop="25dp"
+                    />
+
+                <EditText
+                    android:id="@+id/transportName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="7sp"
+                    android:gravity="start"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/transportNameLabel"
+                    android:inputType="text"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:textCursorDrawable="@null"
+                    android:textSize="14sp"
+                    android:text="@={CreateTransportViewModel.Name}"
+                    style="@style/cerapro"
+                    android:padding="20dp"
+                    android:layout_marginTop="6dp"
+                    />
+
+                <TextView
+                    android:id="@+id/transportNumberLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#30000000"
+                    android:lineSpacingExtra="11sp"
+                    android:text="Number of transport"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/transportName"
+                    android:fontFamily="@font/cera_pro"
+                    android:layout_marginTop="25dp"
+                    />
+
+                <EditText
+                    android:id="@+id/transportNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="7sp"
+                    android:gravity="start"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/transportNumberLabel"
+                    android:inputType="text"
+                    android:background="#fff"
+                    android:textColor="#000"
+                    android:textCursorDrawable="@null"
+                    android:textSize="14sp"
+                    android:text="@={CreateTransportViewModel.Number}"
+                    style="@style/cerapro"
+                    android:padding="20dp"
+                    android:layout_marginTop="6dp"
+                    />
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/weightContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintTop_toBottomOf="@id/transportNumber"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:id="@+id/transportWeightMinLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#30000000"
+                        android:lineSpacingExtra="11sp"
+                        android:text="Whole MIN"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:fontFamily="@font/cera_pro"
+                        />
+
+                    <EditText
+                        android:id="@+id/transportWeightMin"
+                        android:layout_width="148dp"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="7sp"
+                        android:gravity="start"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/transportWeightMinLabel"
+                        android:inputType="text"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:textCursorDrawable="@null"
+                        android:textSize="14sp"
+                        android:text="@={CreateTransportViewModel.WeightMin}"
+                        style="@style/cerapro"
+                        android:padding="20dp"
+                        android:layout_marginTop="6dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/transportWeightMaxLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#30000000"
+                        android:lineSpacingExtra="11sp"
+                        android:text="Whole MAX"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:fontFamily="@font/cera_pro"
+                        />
+
+                    <EditText
+                        android:id="@+id/transportWeightMax"
+                        android:layout_width="148dp"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="7sp"
+                        android:gravity="start"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/transportWeightMaxLabel"
+                        android:inputType="text"
+                        android:background="#fff"
+                        android:textColor="#000"
+                        android:textCursorDrawable="@null"
+                        android:textSize="14sp"
+                        android:text="@={CreateTransportViewModel.WeightMax}"
+                        style="@style/cerapro"
+                        android:padding="20dp"
+                        android:layout_marginTop="6dp"
+                        />
+
+                </android.support.constraint.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/transportImagesLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#30000000"
+                    android:lineSpacingExtra="11sp"
+                    android:text="Images"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weightContainer"
+                    android:fontFamily="@font/cera_pro"
+                    android:layout_marginTop="25dp"
+                    />
+                
+                <FrameLayout
+                    android:id="@+id/transportImagesContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/transportImagesLabel"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="9dp"
+                    android:background="@drawable/button_white"
+                    android:paddingTop="57dp"
+                    android:paddingBottom="57dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/addTransportPhoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/add_white"
+                        android:background="@drawable/confirm_shield_background"
+                        android:layout_gravity="center"
+                        android:padding="28dp"
+                        />
+
+                </FrameLayout>
+
+
+                <Button
+                    android:id="@+id/cancelBack"
+                    android:layout_width="156dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/transportImagesContainer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:background="@drawable/button_white"
+                    android:stateListAnimator="@null"
+                    android:text="Cancel"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:textSize="14sp"
+                    android:layout_marginTop="43dp"
+                    android:layout_marginStart="10dp"
+                    android:paddingVertical="20dp"
+                    android:paddingHorizontal="55dp"
+                    android:foreground="?selectableItemBackground"
+                    />
+
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="156dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/transportImagesContainer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/button_primary"
+                    android:stateListAnimator="@null"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/cera_pro_bold"
+                    android:textColor="#fff"
+                    android:textSize="14sp"
+                    android:paddingVertical="20dp"
+                    android:paddingHorizontal="55dp"
+                    android:layout_marginTop="43dp"
+                    android:layout_marginEnd="10dp"
+                    android:foreground="?selectableItemBackground"
+                    />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

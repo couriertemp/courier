@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Courier</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_maps">Map</string>
+    <string name="history">History</string>
+    <string name="payment_method">Payment method</string>
+    <string name="wallet">Wallet</string>
+    <string name="settings">Settings</string>
+    <string name="information">Information</string>
+    <string name="internal_storage">Internal Storage</string>
+    <string name="monitoring">Monitoring</string>
+    <string name="orders">Orders</string>
+    <string name="mark_twain">Mark Twain</string>
+    <string name="nav_number">+998 90 123-45-67</string>
+    <string name="cancel">Cancel</string>
+    <string name="exit">Exit</string>
+</resources>

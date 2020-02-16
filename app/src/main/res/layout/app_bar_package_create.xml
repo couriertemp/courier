@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    tools:context="uz.courier.view.MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/packageDecorateDetails"
+        android:layout_width="match_parent"
+        android:layout_marginTop="48dp"
+        android:padding="15dp"
+        android:elevation="1dp"
+        android:layout_height="match_parent"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/packageDecoration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/button_white"
+            android:paddingLeft="22dp"
+            android:paddingRight="22dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            >
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/fromContainerInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/fromIconInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="*"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/cera_pro"
+                    android:textColor="#000"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <AutoCompleteTextView
+                    android:id="@+id/packageFromInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/fromIconInfo"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="14dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:drawablePadding="14dp"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:lineSpacingExtra="7sp"
+                    android:hint="From"
+                    android:textColorHint="#c1c1c1"
+                    style="@style/cerapro"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/location_disabled"
+                    />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/toContainerInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fromContainerInfo"
+                android:layout_marginTop="5dp"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/packageToInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:drawableLeft="@drawable/location_arrow"
+                    android:drawableRight="@drawable/location_disabled"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:drawablePadding="14dp"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:lineSpacingExtra="7sp"
+                    android:hint="To"
+                    android:textColorHint="#c1c1c1"
+                    style="@style/cerapro"
+                    android:background="@color/white"
+                    />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <Button
+            android:id="@+id/packageAddInfoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:text="+ Add info"
+            android:textSize="12sp"
+            android:fontFamily="@font/cera_pro"
+            android:lineSpacingExtra="9sp"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="26dp"
+            android:textAllCaps="false"
+            android:background="@drawable/button_primary"
+            android:foreground="@drawable/ripple_button"
+            android:stateListAnimator="@null"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/packageDecoration" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/packageInfo"
+        android:layout_width="match_parent"
+        android:layout_marginTop="48dp"
+        android:padding="15dp"
+        android:elevation="1dp"
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/packageDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/button_white"
+            android:paddingLeft="22dp"
+            android:paddingRight="22dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            >
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/fromContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/fromIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="*"
+                    android:textSize="30sp"
+                    android:fontFamily="@font/cera_pro"
+                    android:textColor="#000"
+                    android:layout_marginTop="8dp"
+                    />
+
+                <AutoCompleteTextView
+                    android:id="@+id/packageFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/fromIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginStart="14dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="10dp"
+                    android:drawablePadding="14dp"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:lineSpacingExtra="7sp"
+                    android:hint="From"
+                    android:textColorHint="#c1c1c1"
+                    style="@style/cerapro"
+                    android:background="@color/white"
+                    android:drawableRight="@drawable/location_disabled"
+                    />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/toContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fromContainer"
+                android:layout_marginTop="5dp"
+                >
+
+                <AutoCompleteTextView
+                    android:id="@+id/packageTo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:drawableLeft="@drawable/location_arrow"
+                    android:drawableRight="@drawable/location_disabled"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingRight="10dp"
+                    android:drawablePadding="14dp"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:lineSpacingExtra="7sp"
+                    android:hint="To"
+                    android:textColorHint="#c1c1c1"
+                    style="@style/cerapro"
+                    android:background="@color/white"
+                    />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/dateContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/toContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="24dp"
+                >
+
+                <TextView
+                    android:id="@+id/dateSnippet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/cerapro"
+                    android:drawableLeft="@drawable/calendar"
+                    android:drawablePadding="15dp"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="25sp"
+                    android:text="Enter the date and time"
+                    android:textColor="#000"
+                    />
+
+                <EditText
+                    android:id="@+id/createdDate"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="16dp"
+                    android:background="#f6f6f6"
+                    app:layout_constraintTop_toBottomOf="@id/dateSnippet"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:inputType="date"
+                    android:hint="12/02/2019"
+                    android:fontFamily="@font/cera_pro"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="23sp"
+                    />
+
+                <EditText
+                    android:id="@+id/createdTime"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="16dp"
+                    android:background="#f6f6f6"
+                    app:layout_constraintTop_toBottomOf="@id/dateSnippet"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:inputType="date"
+                    android:hint="08:30"
+                    android:fontFamily="@font/cera_pro"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="23sp"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/packageWeightContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/dateContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                >
+
+                <TextView
+                    android:id="@+id/weightSnippet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    style="@style/cerapro"
+                    android:drawableLeft="@drawable/weight_tool"
+                    android:drawablePadding="15dp"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="25sp"
+                    android:text="Whole package"
+                    android:textColor="#000"
+                    />
+
+                <TextView
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/weightSnippet"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:text="How much does it weigh"
+                    android:fontFamily="@font/cera_pro"
+                    android:textColor="#000"
+                    android:textSize="13sp"
+                    android:lineSpacingExtra="4sp"
+                    />
+
+                <EditText
+                    android:id="@+id/packageWeight"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="16dp"
+                    android:background="#f6f6f6"
+                    app:layout_constraintTop_toBottomOf="@id/weightSnippet"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:inputType="text"
+                    android:hint="300 kg"
+                    android:fontFamily="@font/cera_pro"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="23sp"
+                    />
+
+                <EditText
+                    android:id="@+id/packageDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="86dp"
+                    android:inputType="text|textMultiLine"
+                    android:gravity="top"
+                    app:layout_constraintTop_toBottomOf="@id/packageWeight"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="12dp"
+                    android:background="#f6f6f6"
+                    android:hint="2 sacks of potatoes"
+                    android:fontFamily="@font/cera_pro"
+                    android:padding="12dp"
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="10sp"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <Button
+            android:id="@+id/savePackageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textSize="12sp"
+            android:fontFamily="@font/cera_pro"
+            android:lineSpacingExtra="9sp"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="44dp"
+            android:textAllCaps="false"
+            android:background="@drawable/button_primary"
+            android:foreground="@drawable/ripple_button"
+            android:stateListAnimator="@null"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/packageDetails" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/packageCarTypes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:visibility="invisible"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            >
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="142dp"
+                android:layout_height="144dp"
+                android:background="@drawable/button_white"
+                android:foreground="@drawable/ripple_button"
+                android:clickable="true"
+                android:paddingTop="17dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:layout_marginEnd="15dp"
+                >
+
+                <TextView
+                    android:id="@+id/chooseTransportTypeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="9sp"
+                    android:text="Passenger car"
+                    android:fontFamily="@font/cera_pro"
+                    />
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/button_primary"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/chooseTransportTypePricePerKm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chooseTransportTypeLabel"
+                    android:layout_marginTop="12dp"
+                    android:textSize="10sp"
+                    android:textColor="#c1c1c1"
+                    android:fontFamily="@font/cera_pro"
+                    android:lineSpacingExtra="11sp"
+                    android:text="0.1$ / 1 km"
+                    />
+
+                <TextView
+                    android:id="@+id/chooseTransportTypePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chooseTransportTypePricePerKm"
+                    android:layout_marginTop="6dp"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/cera_pro"
+                    android:lineSpacingExtra="7sp"
+                    android:text="18$ / 180 km"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chooseTransportTypePrice"
+                    android:src="@drawable/passenger_car"
+                    android:layout_marginTop="22dp"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="142dp"
+                android:layout_height="144dp"
+                android:background="@drawable/button_white"
+                android:foreground="@drawable/ripple_button"
+                android:clickable="true"
+                android:paddingTop="17dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:layout_marginEnd="15dp"
+                >
+
+                <TextView
+                    android:id="@+id/chooseTransportTypeLabelBus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="9sp"
+                    android:text="Minibus"
+                    android:fontFamily="@font/cera_pro"
+                    />
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/button_primary"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/chooseTransportTypePricePerKmBus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chooseTransportTypeLabelBus"
+                    android:layout_marginTop="12dp"
+                    android:textSize="10sp"
+                    android:textColor="#c1c1c1"
+                    android:fontFamily="@font/cera_pro"
+                    android:lineSpacingExtra="11sp"
+                    android:text="0.1$ / 1 km"
+                    />
+
+                <TextView
+                    android:id="@+id/chooseTransportTypePriceBus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chooseTransportTypePricePerKmBus"
+                    android:layout_marginTop="6dp"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/cera_pro"
+                    android:lineSpacingExtra="7sp"
+                    android:text="18$ / 180 km"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chooseTransportTypePriceBus"
+                    android:src="@drawable/minibus"
+                    android:layout_marginTop="22dp"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="142dp"
+                android:layout_height="144dp"
+                android:background="@drawable/button_white"
+                android:foreground="@drawable/ripple_button"
+                android:clickable="true"
+                android:paddingTop="17dp"
+                android:paddingLeft="17dp"
+                android:paddingRight="17dp"
+                android:layout_marginEnd="15dp"
+                >
+
+                <TextView
+                    android:id="@+id/chooseTransportTypeLabelTruck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:lineSpacingExtra="9sp"
+                    android:text="Truck"
+                    android:fontFamily="@font/cera_pro"
+                    />
+
+                <View
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/button_primary"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/chooseTransportTypePricePerKmTruck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chooseTransportTypeLabelTruck"
+                    android:layout_marginTop="12dp"
+                    android:textSize="10sp"
+                    android:textColor="#c1c1c1"
+                    android:fontFamily="@font/cera_pro"
+                    android:lineSpacingExtra="11sp"
+                    android:text="0.1$ / 1 km"
+                    />
+
+                <TextView
+                    android:id="@+id/chooseTransportTypePriceTruck"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chooseTransportTypePricePerKmTruck"
+                    android:layout_marginTop="6dp"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/cera_pro"
+                    android:lineSpacingExtra="7sp"
+                    android:text="18$ / 180 km"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chooseTransportTypePriceTruck"
+                    android:src="@drawable/truck"
+                    android:layout_marginTop="22dp"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

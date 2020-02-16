@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="PersonalInfoViewModel"
+            type="uz.courier.viewModel.PersonalInfoViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f6f6f6"
+    tools:context="uz.courier.view.PersonalInfoActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/left_arrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/toolbar"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/appBarTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:lineSpacingExtra="5sp"
+                tools:text="@{PersonalInfoViewModel.PageTitle}"
+                android:textFontWeight="700"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:fontFamily="@font/cera_pro_bold"
+                />
+
+            <ImageView
+                android:id="@+id/appLogo"
+                android:layout_width="121dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="15.2dp"
+                android:src="@drawable/logo_c"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="60dp"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="60dp"
+            android:paddingBottom="30dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            >
+
+            <TextView
+                android:id="@+id/personalInfoLastnameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#30000000"
+                android:lineSpacingExtra="11sp"
+                android:gravity="center_horizontal"
+                android:text="Lastname, Surname"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/cera_pro"
+                />
+
+            <EditText
+                android:id="@+id/personalInfoLastnameValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:lineSpacingExtra="7sp"
+                android:gravity="center_horizontal"
+                android:text="Conor Anthony McGregor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personalInfoLastnameLabel"
+                android:layout_marginTop="15dp"
+                android:enabled="false"
+                android:inputType="text"
+                android:background="@null"
+                android:fontFamily="@font/cera_pro_bold"
+                />
+
+            <View
+                android:layout_width="116dp"
+                android:layout_height="2dp"
+                android:background="@drawable/personal_edit_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/personalInfoLastnameValue"
+                android:layout_marginTop="12.5dp"
+                />
+
+            <TextView
+                android:id="@+id/personalInfoCountryLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#30000000"
+                android:lineSpacingExtra="11sp"
+                android:gravity="center_horizontal"
+                android:text="Country City"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personalInfoLastnameValue"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/cera_pro"
+                />
+
+            <EditText
+                android:id="@+id/personalInfoCountryValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:lineSpacingExtra="7sp"
+                android:gravity="center_horizontal"
+                android:text="Kuala Lampur"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personalInfoCountryLabel"
+                android:layout_marginTop="15dp"
+                android:enabled="false"
+                android:inputType="text"
+                android:background="@null"
+                android:fontFamily="@font/cera_pro_bold"
+                />
+
+            <View
+                android:layout_width="116dp"
+                android:layout_height="2dp"
+                android:background="@drawable/personal_edit_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/personalInfoCountryValue"
+                android:layout_marginTop="12.5dp"
+                />
+
+            <TextView
+                android:id="@+id/personalInfoEmailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#30000000"
+                android:lineSpacingExtra="11sp"
+                android:gravity="center_horizontal"
+                android:text="Email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personalInfoCountryValue"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/cera_pro"
+                />
+
+            <EditText
+                android:id="@+id/personalInfoEmailValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:lineSpacingExtra="7sp"
+                android:gravity="center_horizontal"
+                android:text="mc.gregor@gmail.com"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personalInfoEmailLabel"
+                android:layout_marginTop="15dp"
+                android:enabled="false"
+                android:inputType="textEmailAddress"
+                android:background="@null"
+                android:fontFamily="@font/cera_pro_bold"
+                />
+
+            <View
+                android:layout_width="116dp"
+                android:layout_height="2dp"
+                android:background="@drawable/personal_edit_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/personalInfoEmailValue"
+                android:layout_marginTop="12.5dp"
+                />
+
+            <TextView
+                android:id="@+id/personalInfoPhonenumberLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#30000000"
+                android:lineSpacingExtra="11sp"
+                android:gravity="center_horizontal"
+                android:text="Phone number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personalInfoEmailValue"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/cera_pro"
+                />
+
+            <EditText
+                android:id="@+id/personalInfoPhonenumberValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:lineSpacingExtra="7sp"
+                android:gravity="center_horizontal"
+                android:text="+99891123-45-67"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personalInfoPhonenumberLabel"
+                android:layout_marginTop="15dp"
+                android:enabled="false"
+                android:inputType="phone"
+                android:background="@null"
+                android:fontFamily="@font/cera_pro_bold"
+                />
+
+            <View
+                android:layout_width="116dp"
+                android:layout_height="2dp"
+                android:background="@drawable/personal_edit_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/personalInfoPhonenumberValue"
+                android:layout_marginTop="12.5dp"
+                />
+
+            <TextView
+                android:id="@+id/personalInfoPassportLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="#30000000"
+                android:lineSpacingExtra="11sp"
+                android:gravity="center_horizontal"
+                android:text="Passport serial number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personalInfoPhonenumberValue"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/cera_pro"
+                />
+
+            <EditText
+                android:id="@+id/personalInfoPassportValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:lineSpacingExtra="7sp"
+                android:gravity="center_horizontal"
+                android:text="AA 7823923"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personalInfoPassportLabel"
+                android:layout_marginTop="15dp"
+                android:enabled="false"
+                android:inputType="text"
+                android:background="@null"
+                android:fontFamily="@font/cera_pro_bold"
+                />
+
+            <View
+                android:layout_width="116dp"
+                android:layout_height="2dp"
+                android:background="@drawable/personal_edit_bg"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/personalInfoPassportValue"
+                android:layout_marginTop="12.5dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/personalInfoEditButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/personalInfoPassportValue"
+                android:layout_marginTop="112dp"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/edit_button"
+                    android:layout_marginTop="5dp"
+                    />
+
+                <Space
+                    android:layout_width="5dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorPrimary"
+                    android:lineSpacingExtra="9sp"
+                    style="@style/cerapro"
+                    tools:text="@{PersonalInfoViewModel.EditButtonLabel}"
+                    android:fontFamily="@font/cera_pro"
+                    />
+
+            </LinearLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+    </android.support.constraint.ConstraintLayout>
+</layout>

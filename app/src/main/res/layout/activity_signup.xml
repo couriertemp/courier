@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="SignupViewModel"
+            type="uz.courier.viewModel.SignupViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="28dp"
+            tools:context="uz.courier.view.SignupActivity">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="94.5dp"
+                android:layout_height="138.5dp"
+                android:src="@drawable/logo_c_bottom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/welcomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:lineSpacingExtra="1sp"
+                tools:text="@{SignupViewModel.WelcomeText}"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/logo"
+                style="@style/cerapro"
+                />
+
+            <TextView
+                android:id="@+id/welcomeSnippet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#c1c1c1"
+                android:lineSpacingExtra="5sp"
+                tools:text="@{SignupViewModel.WelcomeSnippetText}"
+                style="@style/cerapro"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeText" />
+
+            <TextView
+                android:id="@+id/emailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#c1c1c1"
+                android:lineSpacingExtra="7sp"
+                tools:text="@{SignupViewModel.EmailLabel}"
+                style="@style/cerapro"
+                android:layout_marginTop="27dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/welcomeSnippet" />
+
+            <EditText
+                android:id="@+id/emailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="@={SignupViewModel.Email}"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="#66f6f6f6"
+                android:textColor="#000"
+                android:textCursorDrawable="@null"
+                android:textSize="14sp"
+                style="@style/cerapro"
+                android:padding="20dp"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailLabel" />
+
+            <TextView
+                android:id="@+id/passwordLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#c1c1c1"
+                android:lineSpacingExtra="7sp"
+                tools:text="@{SignupViewModel.PasswordLabel}"
+                style="@style/cerapro"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailAddress" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="@={SignupViewModel.Password}"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="#66f6f6f6"
+                android:textCursorDrawable="@null"
+                android:textColor="#000"
+                android:textSize="19sp"
+                android:padding="20dp"
+                style="@style/cerapro"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordLabel" />
+
+
+            <TextView
+                android:id="@+id/firstnameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#c1c1c1"
+                android:lineSpacingExtra="7sp"
+                tools:text="@{SignupViewModel.FirstnameLabel}"
+                style="@style/cerapro"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/password" />
+
+            <EditText
+                android:id="@+id/firstname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="@={SignupViewModel.Firstname}"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="#66f6f6f6"
+                android:textCursorDrawable="@null"
+                android:textColor="#000"
+                android:textSize="19sp"
+                android:padding="20dp"
+                style="@style/cerapro"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstnameLabel" />
+
+            <TextView
+                android:id="@+id/lastnameLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#c1c1c1"
+                android:lineSpacingExtra="7sp"
+                tools:text="@{SignupViewModel.LastnameLabel}"
+                style="@style/cerapro"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/firstname" />
+
+            <EditText
+                android:id="@+id/lastname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="@={SignupViewModel.Lastname}"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="#66f6f6f6"
+                android:textCursorDrawable="@null"
+                android:textColor="#000"
+                android:textSize="19sp"
+                android:padding="20dp"
+                style="@style/cerapro"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lastnameLabel" />
+
+            <TextView
+                android:id="@+id/phonenumberLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#c1c1c1"
+                android:lineSpacingExtra="7sp"
+                tools:text="@{SignupViewModel.PhonenumberLabel}"
+                style="@style/cerapro"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lastname" />
+
+            <EditText
+                android:id="@+id/phonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:text="@={SignupViewModel.Phonenumber}"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="#66f6f6f6"
+                android:textCursorDrawable="@null"
+                android:textColor="#000"
+                android:textSize="19sp"
+                android:padding="20dp"
+                style="@style/cerapro"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phonenumberLabel" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/smsInformationContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phonenumber"
+                android:background="@drawable/info_background"
+                android:paddingHorizontal="23dp"
+                android:paddingVertical="26dp"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_information"
+                    app:layout_constraintEnd_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{SignupViewModel.SmsInformationText}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/countryLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#c1c1c1"
+                android:lineSpacingExtra="7sp"
+                tools:text="@{SignupViewModel.CountryLabel}"
+                style="@style/cerapro"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/smsInformationContainer" />
+
+            <AutoCompleteTextView
+                android:id="@+id/country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="#66f6f6f6"
+                android:textCursorDrawable="@null"
+                android:textColor="#000"
+                android:textSize="19sp"
+                android:padding="20dp"
+                style="@style/cerapro"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/countryLabel" />
+
+            <TextView
+                android:id="@+id/regionLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#c1c1c1"
+                android:lineSpacingExtra="7sp"
+                tools:text="@{SignupViewModel.RegionLabel}"
+                style="@style/cerapro"
+                android:layout_marginTop="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/country" />
+
+            <AutoCompleteTextView
+                android:id="@+id/region"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="#66f6f6f6"
+                android:textCursorDrawable="@null"
+                android:textColor="#000"
+                android:textSize="19sp"
+                android:padding="20dp"
+                style="@style/cerapro"
+                android:layout_marginTop="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/regionLabel" />
+
+            <Button
+                android:id="@+id/signinButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign up"
+                style="@style/cerapro"
+                android:textAllCaps="false"
+                android:background="@drawable/button_primary"
+                android:foreground="@drawable/ripple_button"
+                android:stateListAnimator="@null"
+                android:textColor="@color/white"
+                android:layout_marginTop="54dp"
+                android:onClick="@{() -> SignupViewModel.signup()}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/region" />
+
+            <LinearLayout
+                android:id="@+id/signupLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signinButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <TextView
+                    android:id="@+id/loginLabel"
+                    style="@style/cerapro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="7sp"
+                    android:textColor="#c1c1c1"
+                    android:textSize="14sp"
+                    tools:text="@{SignupViewModel.LoginLabelText}" />
+
+
+                <TextView
+                    android:id="@+id/loginLink"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorPrimary"
+                    android:lineSpacingExtra="7sp"
+                    tools:text="@{SignupViewModel.LoginLinkText}"
+                    style="@style/cerapro"
+                    android:layout_marginStart="10dp"
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/socialSignText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#c1c1c1"
+                android:lineSpacingExtra="7sp"
+                android:layout_marginTop="33dp"
+                tools:text="@{SignupViewModel.SocialSignText}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/signupLink"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/cerapro"
+                />
+
+            <LinearLayout
+                android:id="@+id/socialSign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="48dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/socialSignText"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#f6f6f6"
+                    android:textAllCaps="false"
+                    android:textColor="#475993"
+                    android:paddingHorizontal="28dp"
+                    android:paddingVertical="11dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@drawable/facebook" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#f6f6f6"
+                    android:textAllCaps="false"
+                    android:textColor="#475993"
+                    android:layout_marginLeft="7dp"
+                    android:paddingHorizontal="28dp"
+                    android:paddingVertical="11dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@drawable/search" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+</layout>

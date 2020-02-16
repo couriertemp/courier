@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="ConfirmViewModel"
+            type="uz.courier.viewModel.ConfirmViewModel" />
+
+        <variable
+            name="pinField"
+            type="Boolean" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#fff"
+        tools:context="uz.courier.view.ConfirmActivity"
+        android:padding="15dp"
+        >
+
+        <TextView
+            android:id="@+id/confirmLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="#f7bb4f"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="11sp"
+            android:text="Confirm"
+            android:layout_marginTop="70dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/cera_pro_bold"
+            />
+
+
+        <TextView
+            android:id="@+id/confirmSnippet"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#000000"
+            android:lineSpacingExtra="7sp"
+            android:textAlignment="center"
+            tools:text="@{ConfirmViewModel.ConfirmSnippet}"
+            android:fontFamily="@font/cera_pro"
+            app:layout_constraintTop_toBottomOf="@id/confirmLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="17dp"
+            />
+
+        <FrameLayout
+            android:id="@+id/confirmShieldContainer"
+            android:layout_width="123dp"
+            android:layout_height="123dp"
+            android:background="@drawable/confirm_shield_background"
+            app:layout_constraintTop_toBottomOf="@id/confirmSnippet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="40dp"
+            >
+
+            <ImageView
+                android:id="@+id/confirmShield"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/confirm_shield"
+                android:layout_gravity="center_vertical|center_horizontal"
+
+                />
+
+        </FrameLayout>
+
+        <com.poovam.pinedittextfield.LinePinField
+            android:id="@+id/confirmCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/confirmShieldContainer"
+            android:textColor="#000"
+            style="@style/cerapro"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:highlightType="allFields"
+            android:textSelectHandle="@drawable/text_handle"
+            app:noOfFields="4"
+            app:distanceInBetween="10dp"
+            app:fieldColor="@color/colorPrimary"
+            app:highlightColor="@color/colorAccent"
+            app:lineThickness="2dp"
+            app:isCustomBackground="false"
+            app:isCursorEnabled="false"
+            app:bottomTextPaddingDp="15dp"
+            android:layout_marginTop="45dp"
+            />
+
+        <Button
+            android:id="@+id/confirmButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirm"
+            style="@style/cerapro"
+            android:textAllCaps="false"
+            android:background="@drawable/button_primary"
+            android:foreground="?selectableItemBackground"
+            android:stateListAnimator="@null"
+            android:textColor="@color/white"
+            android:layout_marginBottom="34dp"
+            android:onClick="@{() -> ConfirmViewModel.confirm()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
